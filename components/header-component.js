@@ -1,4 +1,3 @@
-
 import { LitElement, html, css } from 'https://unpkg.com/lit-element/lit-element.js?module';
 
 class LitHeader extends LitElement {
@@ -10,7 +9,7 @@ class LitHeader extends LitElement {
         color: #fff;
         font-family: 'Montserrat', Arial, sans-serif;
         min-height: 80vh;
-        min-width:50vh;
+        min-width: 50vw;
       }
       .nav {
         display: flex;
@@ -68,6 +67,7 @@ class LitHeader extends LitElement {
         align-items: center;
         justify-content: space-between;
         padding: 48px 64px 0 64px;
+        gap: 40px;
       }
       .header-content {
         max-width: 480px;
@@ -116,16 +116,18 @@ class LitHeader extends LitElement {
       }
       .header-visual {
         position: relative;
-        width: 420px;
-        height: 520px;
+        width: 600px;
+        height: 700px;
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-shrink: 0;
       }
       .hero-img {
         position: relative;
         z-index: 2;
-        width:700px;
+        width: 560px;
+        max-width: 90vw;
         border-radius: 24px;
         box-shadow: 0 12px 40px rgba(0,0,0,0.18);
       }
@@ -137,43 +139,67 @@ class LitHeader extends LitElement {
       }
       .shape.blue {
         background: #23b2fc;
-        width: 220px;
-        height: 140px;
+        width: 260px;
+        height: 160px;
         border-radius: 60% 40% 60% 40%/60% 40% 60% 40%;
         top: 40px;
         left: 60px;
       }
       .shape.orange {
         background: linear-gradient(90deg, #ff9800 60%, #ff6d00 100%);
-        width: 160px;
-        height: 100px;
+        width: 180px;
+        height: 120px;
         border-radius: 50% 50% 40% 60%/60% 40% 60% 40%;
-        top: 160px;
+        top: 200px;
         left: 0px;
       }
       .shape.yellow {
         background: linear-gradient(90deg, #ffe066 60%, #ffb300 100%);
-        width: 80px;
-        height: 60px;
+        width: 100px;
+        height: 80px;
         border-radius: 50% 50% 40% 60%/60% 40% 60% 40%;
-        bottom: 40px;
+        bottom: 60px;
         right: 0px;
       }
       /* Decorative lines */
       .line {
         position: absolute;
         z-index: 3;
-        width: 120px;
-        height: 60px;
+        width: 140px;
+        height: 70px;
         border: 2px solid #fff;
         border-radius: 60px 60px 60px 60px/60px 60px 60px 60px;
         opacity: 0.7;
       }
-      .line.one { top: 80px; left: 200px; transform: rotate(10deg);}
-      .line.two { top: 320px; left: 100px; width: 90px; height: 40px;}
-      .line.three { bottom: 60px; right: 40px; width: 80px; height: 60px;}
-      /* Responsive */
-      @media (max-width: 1024px) {
+      .line.one { top: 100px; left: 260px; transform: rotate(10deg);}
+      .line.two { top: 420px; left: 120px; width: 110px; height: 50px;}
+      .line.three { bottom: 80px; right: 40px; width: 100px; height: 80px;}
+
+      /* Tablet */
+      @media (max-width: 1200px) {
+        .header-main {
+          gap: 24px;
+        }
+        .header-visual {
+          width: 440px;
+          height: 520px;
+        }
+        .hero-img {
+          width: 400px;
+        }
+        .shape.blue { width: 180px; height: 110px; }
+        .shape.orange { width: 120px; height: 80px; }
+        .shape.yellow { width: 70px; height: 50px; }
+        .line { width: 90px; height: 40px; }
+        .line.one { top: 60px; left: 160px; }
+        .line.two { top: 260px; left: 60px; width: 70px; height: 30px;}
+        .line.three { bottom: 40px; right: 20px; width: 60px; height: 40px;}
+      }
+      /* Tablet portrait */
+      @media (max-width: 900px) {
+        .nav, .header-main {
+          padding: 20px 18px 0 18px;
+        }
         .header-main {
           flex-direction: column;
           align-items: flex-start;
@@ -181,18 +207,65 @@ class LitHeader extends LitElement {
         }
         .header-visual {
           width: 100%;
-          max-width: 340px;
-          height: 420px;
+          max-width: 370px;
+          height: 440px;
+        }
+        .hero-img {
+          width: 340px;
+        }
+        .header-content {
+          max-width: 100vw;
         }
       }
-      @media (max-width: 700px) {
+      /* Mobile */
+      @media (max-width: 600px) {
         .nav, .header-main {
           flex-direction: column;
           align-items: flex-start;
-          padding: 24px 16px 0 16px;
+          padding: 16px 4vw 0 4vw;
+        }
+        .nav-links {
+          gap: 18px;
+          margin: 18px 0 0 0;
+          font-size: 0.98rem;
+        }
+        .nav-actions {
+          gap: 12px;
+          margin: 16px 0 0 0;
+        }
+        .brand {
+          font-size: 1.5rem;
         }
         .header-main {
-          gap: 20px;
+          gap: 24px;
+        }
+        .header-visual {
+          max-width: 98vw;
+          width: 100%;
+          height: 260px;
+        }
+        .hero-img {
+          width: 98vw;
+          max-width: 300px;
+        }
+        .title {
+          font-size: 2rem;
+        }
+        .subtitle {
+          font-size: 1rem;
+        }
+        .cta {
+          padding: 10px 16px;
+          font-size: 0.95rem;
+        }
+      }
+      /* Extra small devices */
+      @media (max-width: 400px) {
+        .hero-img {
+          max-width: 90vw;
+        }
+        .header-visual {
+          height: 180px;
         }
       }
     `;

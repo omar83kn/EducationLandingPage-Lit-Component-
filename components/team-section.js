@@ -97,6 +97,7 @@ class TeamSection extends LitElement {
     .card-socials a:hover {
       color: #7c3aed;
     }
+    /* Tablet */
     @media (max-width: 1100px) {
       .cards-row {
         gap: 18px;
@@ -105,17 +106,76 @@ class TeamSection extends LitElement {
         width: 220px;
       }
     }
+    /* Small Tablet */
     @media (max-width: 900px) {
       .container {
         padding: 32px 4px 0 4px;
       }
       .cards-row {
-        flex-wrap: wrap;
         gap: 14px;
       }
       .card {
         width: 90vw;
         max-width: 340px;
+      }
+      .title {
+        font-size: 2rem;
+      }
+      .desc {
+        font-size: 1rem;
+      }
+    }
+    /* Mobile */
+    @media (max-width: 600px) {
+      .container {
+        padding: 22px 2vw 0 2vw;
+      }
+      .title {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+      }
+      .desc {
+        font-size: 0.97rem;
+        margin-bottom: 22px;
+      }
+      .cards-row {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+      }
+      .card {
+        width: 98vw;
+        max-width: 400px;
+        min-width: 0;
+        min-height: 0;
+      }
+      .card-img {
+        height: 160px;
+      }
+      .card-info {
+        padding: 16px 8px 14px 8px;
+      }
+      .card-name {
+        font-size: 1rem;
+      }
+      .card-role {
+        font-size: 0.97rem;
+        margin-bottom: 12px;
+      }
+      .card-socials a {
+        font-size: 1.1rem;
+      }
+    }
+    /* Extra Small Devices */
+    @media (max-width: 400px) {
+      .card {
+        max-width: 98vw;
+      }
+      .card-img {
+        height: 110px;
+      }
+      .title {
+        font-size: 1.05rem;
       }
     }
   `;

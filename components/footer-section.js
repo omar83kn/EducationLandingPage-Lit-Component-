@@ -83,6 +83,8 @@ class FooterSection extends LitElement {
     .footer-socials a:hover {
       color: #7c3aed;
     }
+
+    /* Tablet */
     @media (max-width: 950px) {
       .footer-main {
         gap: 30px;
@@ -93,16 +95,52 @@ class FooterSection extends LitElement {
         min-width: 180px;
       }
     }
+
+    /* Mobile */
     @media (max-width: 700px) {
       .footer-main {
         flex-direction: column;
         gap: 0;
         padding: 34px 6vw 20px 6vw;
+        align-items: stretch;
+      }
+      .footer-col {
+        min-width: 0;
+        width: 100%;
+        margin-bottom: 28px;
       }
       .footer-bottom {
         flex-direction: column;
         gap: 10px;
         align-items: flex-start;
+        padding: 16px 6vw 14px 6vw;
+      }
+      .footer-socials {
+        gap: 18px;
+        margin-top: 8px;
+      }
+      .footer-copy {
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Extra Small Devices */
+    @media (max-width: 430px) {
+      .footer-main {
+        padding: 22px 2vw 10px 2vw;
+      }
+      .footer-col-title {
+        font-size: 1rem;
+        margin-bottom: 14px;
+      }
+      .footer-link, .footer-contact {
+        font-size: 0.98rem;
+      }
+      .footer-bottom {
+        padding: 10px 2vw 10px 2vw;
+      }
+      .footer-socials a {
+        font-size: 1.3rem;
       }
     }
   `;

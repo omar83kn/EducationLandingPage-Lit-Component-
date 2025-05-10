@@ -34,13 +34,17 @@ class PopularCoursesHero extends LitElement {
       width: 350px;
       height: 370px;
       pointer-events: none;
+      max-width: 100%;
     }
     .hero-img {
       position: relative;
       z-index: 2;
       width: 340px;
+      max-width: 90vw;
       border-radius: 18px;
       background: transparent;
+      height: auto;
+      object-fit: cover;
     }
     .hero-content-col {
       max-width: 420px;
@@ -90,26 +94,93 @@ class PopularCoursesHero extends LitElement {
     .hero-link:hover .arrow {
       margin-left: 14px;
     }
+    /* Tablet */
+    @media (max-width: 1100px) {
+      .hero-section {
+        gap: 24px;
+      }
+      .hero-image-col {
+        width: 340px;
+        min-width: 0;
+      }
+      .hero-img-bg {
+        width: 260px;
+        height: 270px;
+      }
+      .hero-img {
+        width: 240px;
+      }
+      .hero-content-col {
+        max-width: 100vw;
+        margin-left: 0;
+      }
+    }
+    /* Tablet portrait and small laptops */
     @media (max-width: 900px) {
       .hero-section {
         flex-direction: column;
-        gap: 24px;
-        padding: 32px 8px;
+        gap: 32px;
+        padding: 36px 4vw;
+        min-height: unset;
+      }
+      .hero-image-col {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 0;
       }
       .hero-content-col {
-        margin-left: 0;
         align-items: center;
         text-align: center;
+        margin-left: 0;
+      }
+      .hero-title {
+        font-size: 2.2rem;
+      }
+      .hero-desc {
+        font-size: 1rem;
       }
     }
+    /* Mobile */
     @media (max-width: 600px) {
+      .hero-section {
+        padding: 24px 2vw;
+        gap: 20px;
+      }
+      .hero-image-col {
+        width: 100%;
+        min-width: 0;
+      }
+      .hero-img-bg,
       .hero-img {
         width: 98vw;
         max-width: 320px;
+        min-width: 0;
       }
-      .hero-img-bg {
-        width: 98vw;
-        max-width: 320px;
+      .hero-img {
+        border-radius: 12px;
+      }
+      .hero-title {
+        font-size: 1.4rem;
+      }
+      .hero-desc {
+        font-size: 0.97rem;
+        margin-bottom: 22px;
+      }
+      .hero-bar {
+        margin-bottom: 12px;
+      }
+      .hero-link {
+        font-size: 1rem;
+      }
+    }
+    /* Extra small devices */
+    @media (max-width: 400px) {
+      .hero-title {
+        font-size: 1.1rem;
+      }
+      .hero-img-bg,
+      .hero-img {
+        max-width: 96vw;
       }
     }
   `;

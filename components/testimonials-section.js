@@ -90,6 +90,7 @@ class TestimonialsSection extends LitElement {
       font-size: 1.01rem;
       font-weight: 600;
     }
+    /* Tablet */
     @media (max-width: 950px) {
       .cards-row {
         flex-direction: column;
@@ -100,13 +101,58 @@ class TestimonialsSection extends LitElement {
         width: 98vw;
         max-width: 420px;
       }
+      .title {
+        font-size: 2rem;
+        text-align: center;
+      }
+      .desc, .subtitle {
+        text-align: center;
+      }
     }
+    /* Mobile */
     @media (max-width: 600px) {
       .section {
         padding: 32px 4px 0 4px;
       }
-      .title, .desc, .subtitle {
-        text-align: center;
+      .title {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+      }
+      .desc {
+        font-size: 0.97rem;
+        margin-bottom: 22px;
+      }
+      .card {
+        padding: 22px 8px 18px 8px;
+        min-height: 0;
+      }
+      .card-avatar {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 16px;
+      }
+      .card-text {
+        font-size: 0.96rem;
+        margin-bottom: 16px;
+      }
+      .stars {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+      }
+      .card-name {
+        font-size: 1rem;
+      }
+      .card-role {
+        font-size: 0.95rem;
+      }
+    }
+    /* Extra Small Devices */
+    @media (max-width: 400px) {
+      .card {
+        max-width: 98vw;
+      }
+      .title {
+        font-size: 1.05rem;
       }
     }
   `;

@@ -39,8 +39,7 @@ class ClientMattersSection extends LitElement {
       display: flex;
       justify-content: center;
       gap: 36px;
-      margin-top: 32px;
-      
+      margin-top: 32px; 
     }
     .card {
       background: #fff;
@@ -105,6 +104,41 @@ class ClientMattersSection extends LitElement {
       .card {
         width: 90vw;
         max-width: 320px;
+      }
+    }
+    /* --- Enhanced Mobile Responsiveness --- */
+    @media (max-width: 600px) {
+      .container {
+        padding: 16px 4px 16px 4px;
+      }
+      .title {
+        font-size: 1.6rem;
+        margin-bottom: 12px;
+      }
+      .desc {
+        font-size: 0.98rem;
+        margin-bottom: 24px;
+        max-width: 95vw;
+      }
+      .cards-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-top: 18px;
+      }
+      .card {
+        width: 98vw;
+        max-width: 360px;
+        padding: 18px 8px 16px 8px;
+        min-height: unset;
+      }
+      .card-title {
+        font-size: 1rem;
+      }
+      .card-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 14px;
       }
     }
   `;

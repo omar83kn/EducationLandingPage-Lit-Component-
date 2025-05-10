@@ -8,17 +8,19 @@ class StatsExpertSection extends LitElement {
         background: #26335D;
         color: #fff;
         font-family: 'Montserrat', Arial, sans-serif;
-        padding: 0;
         min-height: 100vh;
+        padding: 0;
       }
       .stats-row {
         display: flex;
         justify-content: center;
         gap: 80px;
         padding: 64px 0 48px 0;
+        flex-wrap: wrap;
       }
       .stat {
         text-align: center;
+        min-width: 120px;
       }
       .stat-number {
         font-size: 2.5rem;
@@ -31,13 +33,13 @@ class StatsExpertSection extends LitElement {
         color: #e0e7ef;
         font-weight: 500;
       }
-      /* ...rest of your styles... */
       .expert-section {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 64px;
         margin-top: 32px;
+        padding: 0 24px;
       }
       .video-thumb-container {
         position: relative;
@@ -48,6 +50,7 @@ class StatsExpertSection extends LitElement {
         box-shadow: 0 8px 32px rgba(0,0,0,0.25);
         background: #222;
         flex-shrink: 0;
+        max-width: 100%;
       }
       .video-thumb {
         width: 100%;
@@ -119,18 +122,45 @@ class StatsExpertSection extends LitElement {
         font-size: 1.1em;
         vertical-align: middle;
       }
+
+      /* Tablet */
+      @media (max-width: 1100px) {
+        .stats-row {
+          gap: 40px;
+          padding: 48px 0 32px 0;
+        }
+        .expert-section {
+          gap: 36px;
+        }
+        .video-thumb-container {
+          width: 440px;
+          height: 260px;
+        }
+        .expert-content {
+          max-width: 100vw;
+        }
+      }
+      /* Tablet & Small Laptop */
       @media (max-width: 900px) {
         .stats-row {
-          gap: 32px;
+          gap: 24px;
         }
         .expert-section {
           flex-direction: column;
           gap: 36px;
+          padding: 0 8vw;
+        }
+        .video-thumb-container {
+          width: 98vw;
+          max-width: 400px;
+          height: 200px;
         }
         .expert-content {
-          max-width: 100%;
+          align-items: center;
+          text-align: center;
         }
       }
+      /* Mobile */
       @media (max-width: 600px) {
         .stats-row {
           flex-direction: column;
@@ -138,13 +168,40 @@ class StatsExpertSection extends LitElement {
           gap: 18px;
           padding: 32px 0 20px 0;
         }
+        .stat-number {
+          font-size: 2rem;
+        }
+        .stat-label {
+          font-size: 1rem;
+        }
         .expert-section {
           gap: 24px;
+          padding: 0 2vw;
         }
         .video-thumb-container {
           width: 98vw;
           max-width: 320px;
-          height: 180px;
+          height: 140px;
+        }
+        .expert-title {
+          font-size: 1.3rem;
+        }
+        .expert-desc {
+          font-size: 0.98rem;
+          margin-bottom: 18px;
+        }
+        .accent-bar {
+          margin-bottom: 10px;
+        }
+      }
+      /* Extra Small Devices */
+      @media (max-width: 400px) {
+        .video-thumb-container {
+          max-width: 98vw;
+          height: 90px;
+        }
+        .expert-title {
+          font-size: 1.05rem;
         }
       }
     `;
@@ -158,7 +215,6 @@ class StatsExpertSection extends LitElement {
 
   constructor() {
     super();
-    // target values and suffixes for each stat
     this.stats = [
       { label: "Happy Customers", value: 15000, suffix: "K", display: 0 },
       { label: "Monthly Visitors", value: 150000, suffix: "K", display: 0 },
@@ -169,7 +225,7 @@ class StatsExpertSection extends LitElement {
 
   firstUpdated() {
     this.stats.forEach((stat, i) => {
-      this.animateNumber(i, stat.value, 1200); // 1.2 seconds duration
+      this.animateNumber(i, stat.value, 1200);
     });
   }
 
@@ -180,7 +236,6 @@ class StatsExpertSection extends LitElement {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
       let current = Math.floor(progress * target);
-      // For 15K and 150K, show "K" at the end, for 100+ show "+" at the end
       if (this.stats[index].suffix === "K") {
         if (target >= 1000) {
           current = Math.floor(current / 1000);
@@ -194,7 +249,6 @@ class StatsExpertSection extends LitElement {
         ];
         requestAnimationFrame(update);
       } else {
-        // Set to final value
         let display = target;
         if (this.stats[index].suffix === "K") {
           display = target >= 1000 ? Math.floor(target / 1000) : target;

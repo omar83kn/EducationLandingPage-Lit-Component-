@@ -204,6 +204,8 @@ class PopularCoursesSection extends LitElement {
       font-size: 1.08em;
       vertical-align: middle;
     }
+
+    /* Tablet */
     @media (max-width: 1100px) {
       .cards-row {
         gap: 18px;
@@ -212,17 +214,77 @@ class PopularCoursesSection extends LitElement {
         width: 220px;
       }
     }
+    /* Small Tablet */
     @media (max-width: 900px) {
       .container {
         padding: 32px 4px 32px 4px;
       }
       .cards-row {
-        flex-wrap: wrap;
         gap: 14px;
       }
       .card {
         width: 90vw;
         max-width: 340px;
+        height: 580px;
+      }
+      .title {
+        font-size: 2.1rem;
+      }
+      .desc {
+        font-size: 1rem;
+      }
+    }
+    /* Mobile */
+    @media (max-width: 600px) {
+      .container {
+        padding: 22px 2vw 22px 2vw;
+      }
+      .title {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+      }
+      .desc {
+        font-size: 0.97rem;
+        margin-bottom: 22px;
+      }
+      .cards-row {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+      }
+      .card {
+        width: 98vw;
+        max-width: 400px;
+        min-width: 0;
+        height: auto;
+      }
+      .card-img-container {
+        height: 180px;
+      }
+      .card-body {
+        padding: 18px 10px 12px 10px;
+      }
+      .card-title {
+        font-size: 1rem;
+      }
+      .card-desc {
+        font-size: 0.93rem;
+      }
+      .card-learn-btn {
+        padding: 11px 0;
+        font-size: 0.97rem;
+      }
+    }
+    /* Extra small devices */
+    @media (max-width: 400px) {
+      .card {
+        max-width: 98vw;
+      }
+      .card-img-container {
+        height: 120px;
+      }
+      .title {
+        font-size: 1.05rem;
       }
     }
   `;

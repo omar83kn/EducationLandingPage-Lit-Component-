@@ -15,7 +15,8 @@ class NewsletterSection extends LitElement {
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      width: 100vw;
+      padding: 20px;
+      box-sizing: border-box;
     }
     .newsletter-label {
       color: #a78bfa;
@@ -31,6 +32,7 @@ class NewsletterSection extends LitElement {
       color: #fff;
       text-align: center;
       line-height: 1.1;
+      max-width: 90vw;
     }
     .newsletter-desc {
       color: #cbd5e1;
@@ -38,6 +40,7 @@ class NewsletterSection extends LitElement {
       margin-bottom: 48px;
       text-align: center;
       max-width: 680px;
+      padding: 0 20px;
     }
     .newsletter-form {
       display: flex;
@@ -76,9 +79,16 @@ class NewsletterSection extends LitElement {
     .newsletter-button:hover {
       background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 100%);
     }
+
+    /* Tablet */
     @media (max-width: 800px) {
       .newsletter-title {
         font-size: 2rem;
+        max-width: 95vw;
+      }
+      .newsletter-desc {
+        font-size: 1rem;
+        margin-bottom: 32px;
       }
       .newsletter-form {
         flex-direction: column;
@@ -88,12 +98,50 @@ class NewsletterSection extends LitElement {
       .newsletter-button {
         border-radius: 6px;
         width: 100%;
-        margin: 0 0 10px 0;
+        margin: 0 0 12px 0;
         box-sizing: border-box;
       }
       .newsletter-button {
-        padding: 14px 0;
+        padding: 16px 0;
         font-size: 1.1rem;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .wrapper {
+        padding: 20px 12px;
+      }
+      .newsletter-label {
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+      .newsletter-title {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+      }
+      .newsletter-desc {
+        font-size: 0.95rem;
+        margin-bottom: 28px;
+        padding: 0;
+      }
+      .newsletter-input {
+        padding: 14px 16px;
+        font-size: 1rem;
+      }
+      .newsletter-button {
+        padding: 14px 0;
+        font-size: 1rem;
+      }
+    }
+
+    /* Small Mobile */
+    @media (max-width: 400px) {
+      .newsletter-title {
+        font-size: 1.6rem;
+      }
+      .newsletter-desc br {
+        display: none;
       }
     }
   `;
