@@ -1,5 +1,7 @@
 import { LitElement, html, css } from 'https://unpkg.com/lit-element/lit-element.js?module';
 
+
+
 class LitHeader extends LitElement {
   static get styles() {
     return css`
@@ -305,7 +307,7 @@ class LitHeader extends LitElement {
           <div class="line two"></div>
           <div class="line three"></div>
           <!-- Replace the src below with your own image if desired -->
-          <img class="hero-img" src="./images/happy student.png" alt="Happy Student">
+          <img class="hero-img" src="./Images/happy student.png" alt="Happy Student">
         </div>
       </section>
     `;

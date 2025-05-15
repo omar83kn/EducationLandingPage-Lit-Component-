@@ -281,7 +281,7 @@ class StatsExpertSection extends LitElement {
         <div class="video-thumb-container">
           <img 
             class="video-thumb"
-            src="./images/child.jpeg"
+            src="./Images/child.jpeg"
             alt="Child Reading"
           >
           <button class="play-button" aria-label="Play video">
