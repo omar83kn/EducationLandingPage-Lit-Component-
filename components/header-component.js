@@ -1,17 +1,20 @@
 import { LitElement, html, css } from 'https://unpkg.com/lit-element/lit-element.js?module';
 
-
-
 class LitHeader extends LitElement {
   static get styles() {
     return css`
       :host {
         display: block;
+        width: 1439px;
+        max-width: 100vw;
+        min-height: 682px;
+        height: auto;
         background: #26335D;
         color: #fff;
         font-family: 'Montserrat', Arial, sans-serif;
-        min-height: 80vh;
-        min-width: 50vw;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
       }
       .nav {
         display: flex;
@@ -128,40 +131,14 @@ class LitHeader extends LitElement {
       .hero-img {
         position: relative;
         z-index: 2;
-        width: 560px;
+        width: 704px;
         max-width: 90vw;
-        border-radius: 24px;
-        box-shadow: 0 12px 40px rgba(0,0,0,0.18);
       }
       /* Abstract shapes */
       .shape {
         position: absolute;
         z-index: 1;
         opacity: 0.95;
-      }
-      .shape.blue {
-        background: #23b2fc;
-        width: 260px;
-        height: 160px;
-        border-radius: 60% 40% 60% 40%/60% 40% 60% 40%;
-        top: 40px;
-        left: 60px;
-      }
-      .shape.orange {
-        background: linear-gradient(90deg, #ff9800 60%, #ff6d00 100%);
-        width: 180px;
-        height: 120px;
-        border-radius: 50% 50% 40% 60%/60% 40% 60% 40%;
-        top: 200px;
-        left: 0px;
-      }
-      .shape.yellow {
-        background: linear-gradient(90deg, #ffe066 60%, #ffb300 100%);
-        width: 100px;
-        height: 80px;
-        border-radius: 50% 50% 40% 60%/60% 40% 60% 40%;
-        bottom: 60px;
-        right: 0px;
       }
       /* Decorative lines */
       .line {
@@ -176,28 +153,12 @@ class LitHeader extends LitElement {
       .line.one { top: 100px; left: 260px; transform: rotate(10deg);}
       .line.two { top: 420px; left: 120px; width: 110px; height: 50px;}
       .line.three { bottom: 80px; right: 40px; width: 100px; height: 80px;}
-
-      /* Tablet */
-      @media (max-width: 1200px) {
-        .header-main {
-          gap: 24px;
+      /* Responsive styles (optional, you may want to adjust or remove for fixed width) */
+      @media (max-width: 1439px) {
+        :host {
+          width: 100vw;
         }
-        .header-visual {
-          width: 440px;
-          height: 520px;
-        }
-        .hero-img {
-          width: 400px;
-        }
-        .shape.blue { width: 180px; height: 110px; }
-        .shape.orange { width: 120px; height: 80px; }
-        .shape.yellow { width: 70px; height: 50px; }
-        .line { width: 90px; height: 40px; }
-        .line.one { top: 60px; left: 160px; }
-        .line.two { top: 260px; left: 60px; width: 70px; height: 30px;}
-        .line.three { bottom: 40px; right: 20px; width: 60px; height: 40px;}
       }
-      /* Tablet portrait */
       @media (max-width: 900px) {
         .nav, .header-main {
           padding: 20px 18px 0 18px;
@@ -219,7 +180,6 @@ class LitHeader extends LitElement {
           max-width: 100vw;
         }
       }
-      /* Mobile */
       @media (max-width: 600px) {
         .nav, .header-main {
           flex-direction: column;
@@ -261,7 +221,6 @@ class LitHeader extends LitElement {
           font-size: 0.95rem;
         }
       }
-      /* Extra small devices */
       @media (max-width: 400px) {
         .hero-img {
           max-width: 90vw;
@@ -299,15 +258,13 @@ class LitHeader extends LitElement {
           </div>
         </div>
         <div class="header-visual">
-          <!-- Abstract shapes behind the image -->
           <div class="shape blue"></div>
           <div class="shape orange"></div>
           <div class="shape yellow"></div>
           <div class="line one"></div>
           <div class="line two"></div>
           <div class="line three"></div>
-          <!-- Replace the src below with your own image if desired -->
-          <img class="hero-img" src="./Images/happy student.png" alt="Happy Student">
+          <img class="hero-img" src="./Images/Happy Student.png" alt="Happy Student">
         </div>
       </section>
     `;

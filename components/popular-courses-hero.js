@@ -39,11 +39,11 @@ class PopularCoursesHero extends LitElement {
     .hero-img {
       position: relative;
       z-index: 2;
-      width: 340px;
+      width: 553px;
       max-width: 90vw;
       border-radius: 18px;
       background: transparent;
-      height: auto;
+      height: 647.67px;
       object-fit: cover;
     }
     .hero-content-col {
@@ -198,7 +198,7 @@ class PopularCoursesHero extends LitElement {
           </svg>
           <!-- Main image -->
           <img class="hero-img"
-            src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&w=400&h=500&fit=facearea"
+            src="/Images/Happy child.png"
             alt="Popular Courses Student"
           />
         </div>
